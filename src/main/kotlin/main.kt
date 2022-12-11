@@ -24,15 +24,20 @@ object RockPaperScissor {
 
 val elfCalories:MutableList<Int> = mutableListOf()
 fun main() {
-    val inputstream: InputStream = File("src/main/resources/backpack.txt").inputStream();
+    val day4List = mutableListOf<String>()
+    val inputstream: InputStream = File("src/main/resources/section_pair.txt").inputStream();
     inputstream.bufferedReader().forEachLine {
-        backPackList.add(it.toList())
+        day4List.add(it)
+        //backPackList.add(it.toList())
         //handleRound(it)
         //handleDay3(it)
     }
+    val day4: Day4 = Day4(day4List)
+    println(day4.getTotalFullyContainedSections())
+
     //println(rockPaperCicorsResult)
-    handleDay3Part2()
-    println(totalSumBackpack)
+    //handleDay3Part2()
+    //println(totalSumBackpack)
 }
 
 fun handleDay3Part2() {
